@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<diagram id="CH_DAO_platfoform_diagram" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema_DAOMod_ERD_journal_submission.xsd">
+    <diagram_name>CommonsHood DAO deployment platform diagram</diagram_name>
+    <organizationGoal id="og1" decomposed_from="g1">
+        <refinement_level>1</refinement_level>
+        <DAO_name>Association DAO</DAO_name>
+        <mission_statement>facilitate the participation of associations and collectives in the CommonsHood in the Garden project</mission_statement>
+    </organizationGoal>
+    <organizationGoal id="og2" decomposed_from="g1">
+        <refinement_level>1</refinement_level>
+        <DAO_name>Community DAO</DAO_name>
+        <mission_statement>manage the governance of the CommonsHood in the Garden project and its token economy</mission_statement>
+    </organizationGoal>
+    <treasury id="t1" decomposed_from="og1">
+        <refinement_level>2</refinement_level>
+        <treasury_name>Association Treasury</treasury_name>
+        <DAO_fiscal_policy_goal>manage association funds in RT and crowdsales</DAO_fiscal_policy_goal>
+    </treasury>
+    <treasury id="t2" decomposed_from="og2">
+        <refinement_level>2</refinement_level>
+        <treasury_name>Escrow Account</treasury_name>
+        <DAO_fiscal_policy_goal>reward volunteer contributions</DAO_fiscal_policy_goal>
+    </treasury>
+    <decisionMakingMethod id="dmm1" decomposed_from="og1" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <DM_goal>Association Board voting</DM_goal>
+        <DM_scope>Association Management; Association Membership;</DM_scope>
+        <DM_method>Lazy Consensus;</DM_method>
+        <voting_requirement>allowlist</voting_requirement>
+        <proposal_requirement>allowlist</proposal_requirement>
+    </decisionMakingMethod>
+    <decisionMakingMethod id="dmm2" decomposed_from="og2" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <DM_goal>Enable Operations Committee voting</DM_goal>
+        <DM_scope>Token Economy; Community Policies; Community Membership;</DM_scope>
+        <DM_method>Lazy Consensus;</DM_method>
+        <voting_requirement>RT ownership</voting_requirement>
+        <proposal_requirement>RT ownership</proposal_requirement>
+    </decisionMakingMethod>
+    <decisionMakingMethod id="dmm3" decomposed_from="og2" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <DM_goal>Enable Policy Committee voting</DM_goal>
+        <DM_scope>Community Membership; Garden Management Operations</DM_scope>
+        <DM_method>Lazy Consensus;</DM_method>
+        <voting_requirement>RT threshold; allowlist</voting_requirement>
+        <proposal_requirement>RT threshold; allowlist</proposal_requirement>
+    </decisionMakingMethod>
+    <tokenManager id="tm1" decomposed_from="og1">
+        <refinement_level>2</refinement_level>
+        <token_manager_name>Association token manager</token_manager_name>
+        <tokenomic_policy_goal>certify task execution and represent services offered by the DAO</tokenomic_policy_goal>
+    </tokenManager>
+    <tokenManager id="tm2" decomposed_from="og2">
+        <refinement_level>2</refinement_level>
+        <token_manager_name>Communnity token manager</token_manager_name>
+        <tokenomic_policy_goal>provide liquidity to reward volunteers and tokenize access rights to shared resources</tokenomic_policy_goal>
+    </tokenManager>
+    <token id="RT" decomposed_from="tm1 t1 t2">
+        <refinement_level>3</refinement_level>
+        <value>Reward Token</value>
+        <token_utility>financial;governance;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <token id="ST">
+        <refinement_level>3</refinement_level>
+        <value>Service Coupon Token</value>
+        <token_utility>usage;access;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <token id="TCC">
+        <refinement_level>3</refinement_level>
+        <value>Task Completion Certificate Token</value>
+        <token_utility>reputation</token_utility>
+        <transferable>true</transferable>
+        <fungibility>SFT</fungibility>
+    </token>
+    <token id="AT">
+        <refinement_level>3</refinement_level>
+        <value>Access Token</value>
+        <token_utility>usage;access;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>NFT</fungibility>
+    </token>
+    <resource id="r1" associated_to="RT" material="false">
+        <resource_name>community governance right</resource_name>
+    </resource>
+    <resource id="r2" associated_to="RT" material="false">
+        <resource_name>service coupons</resource_name>
+    </resource>
+    <resource id="r3" associated_to="ST" material="false">
+        <resource_name>services provided by the associations</resource_name>
+    </resource>
+    <resource id="r4" associated_to="AT" material="true">
+        <resource_name>tool for rent</resource_name>
+    </resource>
+    <resource id="r5" associated_to="AT" material="true">
+        <resource_name>shared space</resource_name>
+    </resource>
+    <proposal id="p1" associated_to="dmm1">
+        <value>Proposal</value>
+        <parameter>proposal_name</parameter>
+        <parameter>proposal_description</parameter>
+        <allowed_state>draft</allowed_state>
+        <allowed_state>pending</allowed_state>
+        <allowed_state>challenged</allowed_state>
+        <allowed_state>passed</allowed_state>
+    </proposal>
+    <proposal id="p2" associated_to="dmm1">
+        <value>Task violation report</value>
+        <parameter>task_id</parameter>
+        <parameter>violation_description</parameter>
+        <allowed_state>draft</allowed_state>
+        <allowed_state>pending</allowed_state>
+        <allowed_state>rejected</allowed_state>
+        <allowed_state>accepted</allowed_state>
+    </proposal>
+    <proposal id="p3" associated_to="dmm1">
+        <value>Task Proposal</value>
+        <parameter>task ID</parameter>
+        <parameter>task_description</parameter>
+        <parameter>proposed_reward</parameter>
+        <allowed_state>draft</allowed_state>
+        <allowed_state>pending</allowed_state>
+        <allowed_state>rejected</allowed_state>
+        <allowed_state>passed</allowed_state>
+    </proposal>
+    <mechanism id="m1" decomposed_from="t1" execution="onchain" mechanism_type="Exchange">
+        <refinement_level>3</refinement_level>
+        <value>Exchange ST for RT</value>
+        <trigger>user transfers RT</trigger>
+    </mechanism>
+    <mechanism id="m2" decomposed_from="TCC" execution="onchain" mechanism_type="Incentive">
+        <refinement_level>4</refinement_level>
+        <value>Manage issuance and transfer of token associated with task</value>
+        <trigger>task completed</trigger>
+    </mechanism>
+    <mechanism id="m3" decomposed_from="dmm1" execution="onchain" mechanism_type="Vote Polling">
+        <refinement_level>3</refinement_level>
+        <value>Enable proposal challenging</value>
+        <trigger>receive proposal</trigger>
+    </mechanism>
+    <mechanism id="m4" decomposed_from="dmm1" execution="onchain" mechanism_type="Proposal Execution">
+        <refinement_level>3</refinement_level>
+        <value>Execute proposal transaction</value>
+        <trigger>proposal tallying complete</trigger>
+        <precondition>proposal passed and permission is granted to perform the selected action</precondition>
+    </mechanism>
+    <mechanism id="m5" decomposed_from="dmm1" execution="snapshot" mechanism_type="Dispute Resolution">
+        <refinement_level>3</refinement_level>
+        <value>Evaluate task violation report</value>
+        <trigger>violation report submitted</trigger>
+    </mechanism>
+    <mechanism id="m6" decomposed_from="dmm1" execution="onchain" mechanism_type="Vote Tallying">
+        <refinement_level>3</refinement_level>
+        <value>Challenge Count</value>
+        <trigger>proposal challenging period completed</trigger>
+    </mechanism>
+    <mechanism id="m7" decomposed_from="tm2" execution="onchain" mechanism_type="Token Issuance">
+        <refinement_level>3</refinement_level>
+        <value>Mint and associate AT to resource</value>
+        <trigger>new resource added</trigger>
+    </mechanism>
+    <mechanism id="m8" decomposed_from="RT" execution="onchain" mechanism_type="Token Issuance">
+        <refinement_level>4</refinement_level>
+        <value>Issuance of RT and distribution to Association DAOs</value>
+        <trigger>periodic</trigger>
+    </mechanism>
+    <mechanism id="m9" decomposed_from="t1" execution="onchain" mechanism_type="Incentive">
+        <refinement_level>3</refinement_level>
+        <value>Manage reward distribution to volunteers</value>
+        <trigger>task completion confirmation</trigger>
+    </mechanism>
+    <mechanism id="m10" decomposed_from="dmm2" execution="onchain" mechanism_type="Vote Tallying">
+        <refinement_level>3</refinement_level>
+        <value>Proposal challenge count</value>
+        <trigger>Proposal challenging period finished</trigger>
+    </mechanism>
+    <mechanism id="m11" decomposed_from="dmm2" execution="onchain" mechanism_type="Vote Polling">
+        <refinement_level>3</refinement_level>
+        <value>Poll proposal challenges</value>
+        <trigger>proposal submission</trigger>
+    </mechanism>
+    <mechanism id="m12" decomposed_from="dmm3" execution="snapshot" mechanism_type="Dispute Resolution">
+        <refinement_level>3</refinement_level>
+        <value>Handle dispute</value>
+        <trigger>receive dispute</trigger>
+    </mechanism>
+    <mechanism id="m13" decomposed_from="dmm3" execution="onchain" mechanism_type="Vote Polling">
+        <refinement_level>3</refinement_level>
+        <value>poll votes</value>
+        <trigger>Proposal submission</trigger>
+    </mechanism>
+    <mechanism id="m14" decomposed_from="dmm2" execution="onchain" mechanism_type="Vote Tallying">
+        <refinement_level>3</refinement_level>
+        <value>tally votes weighted by RTs held</value>
+        <trigger>Proposal challenging period finished</trigger>
+    </mechanism>
+    <goal id="g1" execution="offchain">
+        <refinement_level>0</refinement_level>
+        <value>Provide a decentralized governance infrastructure for local communities</value>
+    </goal>
+    <goal id="g2" decomposed_from="g1" execution="offchain">
+        <refinement_level>1</refinement_level>
+        <value>Achieve local community engagement</value>
+    </goal>
+    <goal id="g3" decomposed_from="g2" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Manage discussion forum forums and social interactions</value>
+    </goal>
+    <goal id="g4" decomposed_from="g2" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Enable consultation on disputes</value>
+    </goal>
+    <goal id="g5" decomposed_from="g2" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Georeference content</value>
+    </goal>
+    <goal id="g6" decomposed_from="g1" execution="offchain">
+        <refinement_level>1</refinement_level>
+        <value>Achieve user participation</value>
+    </goal>
+    <goal id="g7" decomposed_from="g6" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Onboard individual participant</value>
+    </goal>
+    <goal id="g8" decomposed_from="g6" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Onboard associations</value>
+    </goal>
+    <goal id="g9" decomposed_from="g6" execution="offchain">
+        <refinement_level>2</refinement_level>
+        <value>Handle DAO member activities</value>
+    </goal>
+    <goal id="g10" decomposed_from="g9" execution="offchain">
+        <refinement_level>3</refinement_level>
+        <value>Display DAO activities and transaction history</value>
+    </goal>
+    <goal id="g11" decomposed_from="g9" execution="offchain">
+        <refinement_level>3</refinement_level>
+        <value>Enbale proposal submission</value>
+    </goal>
+    <goal id="g12" decomposed_from="g9" execution="offchain">
+        <refinement_level>3</refinement_level>
+        <value>Enable vote submission</value>
+    </goal>
+    <goal id="g13" decomposed_from="g1" execution="onchain">
+        <refinement_level>1</refinement_level>
+        <value>Enable DAO deployment</value>
+    </goal>
+    <goal id="g14" decomposed_from="og1" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <value>Manage Association applications and membership</value>
+    </goal>
+    <goal id="g15" decomposed_from="og2" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <value>Manage Community membership and permissions</value>
+    </goal>
+    <goal id="g16" decomposed_from="og2" execution="onchain">
+        <refinement_level>2</refinement_level>
+        <value>Enable users to rent tools and reserve shared spaces</value>
+    </goal>
+    <qualitygoal id="qg1" associated_to="g6 g2 m5">
+        <value>Performant</value>
+    </qualitygoal>
+    <qualitygoal id="qg2" associated_to="g6 g2 m5">
+        <value>Scalable</value>
+    </qualitygoal>
+    <qualitygoal id="qg3" associated_to="g6">
+        <value>Usable</value>
+    </qualitygoal>
+    <qualitygoal id="qg4" associated_to="g2">
+        <value>Extensible</value>
+    </qualitygoal>
+    <qualitygoal id="qg5" associated_to="dmm3 g13">
+        <value>Secure</value>
+    </qualitygoal>
+    <qualitygoal id="qg6" associated_to="g13 dmm1">
+        <value>Verifiable</value>
+    </qualitygoal>
+    <qualitygoal id="qg7" associated_to="dmm1 dmm2">
+        <value>Simple</value>
+    </qualitygoal>
+    <qualitygoal id="qg8" associated_to="dmm1 dmm2">
+        <value>Efficient</value>
+    </qualitygoal>
+    <qualitygoal id="qg9" associated_to="t1 t2">
+        <value>Incentive-aligning</value>
+    </qualitygoal>
+    <qualitygoal id="qg10" associated_to="tm1 tm2">
+        <value>Dependable</value>
+    </qualitygoal>
+    <qualitygoal id="qg11" associated_to="RT">
+        <value>Liquid</value>
+    </qualitygoal>
+    <qualitygoal id="qg12" associated_to="dmm3">
+        <value>Accountable</value>
+    </qualitygoal>
+    <qualitygoal id="qg13" associated_to="dmm2">
+        <value>Inclusive</value>
+    </qualitygoal>
+    <agent id="ag1" associated_to="g9 g15" agent_name="DAO Member" autonomous="false"/>
+    <agent id="ag2" associated_to="g8" agent_name="Association Representative" autonomous="true"/>
+    <agent id="ag3" associated_to="g2 dmm2" agent_name="Participant" autonomous="false"/>
+    <agent id="ag4" associated_to="g7 g15" agent_name="CommonsHood user" autonomous="false"/>
+    <agent id="ag5" associated_to="t1 tm1 g14 m2 m5" agent_name="Association Board Agent" autonomous="true"/>
+    <agent id="ag6" associated_to="dmm1 m5" agent_name="Association Member" autonomous="false"/>
+    <agent id="ag7" associated_to="dmm3 m12" agent_name="Active Participant" autonomous="false"/>
+    <agent id="ag8" associated_to="g16 tm2 m12" agent_name="Urban Garden Collective" autonomous="true"/>
+    <agent id="ag9" associated_to="dmm2" agent_name="Participant" autonomous="false"/>
+    <agent id="ag10" associated_to="tm2" agent_name="Policy Committee" autonomous="true"/>
+    <agent id="ag11" associated_to="dmm3" agent_name="Association DAO" autonomous="true"/>
+</diagram>

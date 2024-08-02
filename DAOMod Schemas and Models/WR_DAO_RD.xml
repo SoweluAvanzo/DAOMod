@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<diagram id="CH_DAO_platfoform_diagram" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema_DAOMod_ERD_journal_submission.xsd">
+    <diagram_name>White Rabbit DAO</diagram_name>
+    <organizationGoal id="og">
+        <refinement_level>0</refinement_level>
+        <DAO_name>IP Manager DAO</DAO_name>
+        <mission_statement>Handle intellectual property claims and conflicts, payments and the distribution of rewards to stakeholders</mission_statement>
+    </organizationGoal>
+    <treasury id="t" decomposed_from="og">
+        <refinement_level>1</refinement_level>
+        <treasury_name>IP Manager DAO treasury</treasury_name>
+        <DAO_fiscal_policy_goal>Distribute rewards and collect investments</DAO_fiscal_policy_goal>
+    </treasury>
+    <decisionMakingMethod id="dmm" decomposed_from="og" execution="offchain">
+        <refinement_level>1</refinement_level>
+        <DM_goal>Solve IP ownership conflicts, approve reward distribution policy</DM_goal>
+        <DM_scope>Reward Distribution; Conflict Resolution;</DM_scope>
+        <DM_method>consensus</DM_method>
+        <voting_requirement>GT ownership, IP ownership</voting_requirement>
+        <proposal_requirement>GT ownership, IP ownership</proposal_requirement>
+    </decisionMakingMethod>
+    <tokenManager id="tm" decomposed_from="og">
+        <refinement_level>1</refinement_level>
+        <token_manager_name>DAO token manager</token_manager_name>
+        <tokenomic_policy_goal>Manage property and governance right distribution</tokenomic_policy_goal>
+    </tokenManager>
+    <token id="AT" decomposed_from="tm">
+        <refinement_level>2</refinement_level>
+        <value>Film Access Token</value>
+        <token_utility>access;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>NFT</fungibility>
+    </token>
+    <token id="FIT" decomposed_from="t">
+        <refinement_level>2</refinement_level>
+        <value>Film Industry Token</value>
+        <token_utility>financial; usage;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <token id="GT" decomposed_from="tm">
+        <refinement_level>2</refinement_level>
+        <value>Governance Token</value>
+        <token_utility>governance</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <token id="IP" decomposed_from="tm">
+        <refinement_level>2</refinement_level>
+        <value>Intellectual Property Token</value>
+        <token_utility>financial;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>SFT</fungibility>
+    </token>
+    <resource id="r1" associated_to="IP" material="false">
+        <resource_name>Intellectual property share</resource_name>
+    </resource>
+    <resource id="r2" associated_to="GT" material="false">
+        <resource_name>DAO governance right</resource_name>
+    </resource>
+    <resource id="r3" associated_to="FIT" material="false">
+        <resource_name>Media content ownership</resource_name>
+    </resource>
+    <resource id="r4" associated_to="FIT" material="false">
+        <resource_name>Onchain computation</resource_name>
+    </resource>
+    <resource id="r5" associated_to="AT" material="false">
+        <resource_name>Film view access</resource_name>
+    </resource>
+    <mechanism id="m1" decomposed_from="FIT" execution="onchain" mechanism_type="Revenue Management">
+        <refinement_level>3</refinement_level>
+        <value>collect fees in FIT, store reserve and distribute profits</value>
+        <trigger>film item purchase</trigger>
+    </mechanism>
+    <mechanism id="m2" decomposed_from="AT" execution="onchain" mechanism_type="Token Issuance">
+        <refinement_level>3</refinement_level>
+        <value>Issue AT</value>
+        <trigger>new film registered</trigger>
+    </mechanism>
+    <mechanism id="m3" decomposed_from="tm" execution="onchain" mechanism_type="Exchange">
+        <refinement_level>2</refinement_level>
+        <value>Transfer AT in exchange for FIT</value>
+        <trigger>Receive transaction in FIT</trigger>
+    </mechanism>
+    <mechanism id="m4" decomposed_from="tm t" execution="onchain" mechanism_type="Automated Market Maker">
+        <refinement_level>2</refinement_level>
+        <value>Issue GT and store liquidity in FIT</value>
+        <trigger>transfer of FIT or GT</trigger>
+    </mechanism>
+    <mechanism id="m5" decomposed_from="dmm" execution="onchain" mechanism_type="Proposal Execution">
+        <refinement_level>2</refinement_level>
+        <value>Issue/upgrade IP token and transfer it to rightholders</value>
+        <trigger>consensus reached</trigger>
+    </mechanism>
+    <mechanism id="m6" decomposed_from="dmm" execution="offchain" mechanism_type="Vote Polling">
+        <refinement_level>2</refinement_level>
+        <value>Iterate voting loop</value>
+        <trigger>proposal submitted</trigger>
+        <postcondition>consensus reached</postcondition>
+    </mechanism>
+    <mechanism id="m7" decomposed_from="dmm" execution="offchain" mechanism_type="Vote Tallying">
+        <refinement_level>2</refinement_level>
+        <value>check consensus</value>
+        <trigger>rightholder vote</trigger>
+        <precondition>polling active</precondition>
+    </mechanism>
+    <qualitygoal id="qg1" associated_to="m7 m6">
+        <value>Performant</value>
+    </qualitygoal>
+    <qualitygoal id="qg2" associated_to="tm m5">
+        <value>Verifiable</value>
+    </qualitygoal>
+    <qualitygoal id="qg3" associated_to="tm t">
+        <value>Dependable</value>
+    </qualitygoal>
+    <qualitygoal id="qg4" associated_to="GT AT">
+        <value>Liquid</value>
+    </qualitygoal>
+    <qualitygoal id="qg5" associated_to="dmm tm t">
+        <value>Secure</value>
+    </qualitygoal>
+    <qualitygoal id="qg6" associated_to="dmm">
+        <value>Private</value>
+    </qualitygoal>
+    <qualitygoal id="qg7" associated_to="dmm">
+        <value>Effective</value>
+    </qualitygoal>
+    <qualitygoal id="qg8" associated_to="IP GT">
+        <value>Rare</value>
+    </qualitygoal>
+    <qualitygoal id="qg9" associated_to="tm t">
+        <value>Profitable</value>
+    </qualitygoal>
+    <agent id="ag1" associated_to="dmm t" agent_name="DAO share holder" autonomous="false"/>
+    <agent id="ag2" associated_to="m3 m4" agent_name="Platform user" autonomous="false"/>
+    <agent id="ag3" associated_to="dmm" agent_name="IP right holder" autonomous="false"/>
+</diagram>

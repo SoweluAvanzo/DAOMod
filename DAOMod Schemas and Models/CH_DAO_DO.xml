@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<DAOMod_DO_diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="XSD_TDM_Decentralized_Organization.xsd"
+                name="CommonsHood DAO deployment platform Decentralized Organization Model"
+                uniqueID="CHDAOModel">
+    <DAO DAO_ID="CH_Assoc" DAO_name="Association DAO" mission_statement="facilitate the participation of associations and collectives in the CommonsHood in the Garden project" hierarchical_inheritance="0">
+        <Role id="r_AssociationMember" role_name="Association Member" assignment_method="Application" agent_type="human" federation_level="0" aggregation_level="0">
+            <member_of>C_AssociationBoard</member_of>
+            <associated_to>OpposeProposal</associated_to>
+            <associated_to>NotifyTaskViolation </associated_to>
+            <associated_to>TaskProposal</associated_to>
+            <is_controlled_by>C_AssociationBoard</is_controlled_by>
+        </Role>
+
+        <Committee id="C_AssociationBoard" committee_name="Association Board" n_agent_min="3" appointment_method="allowlist" federation_level="1">
+            <is_controlled_by>C_AssociationBoard</is_controlled_by>
+            <associated_to>TokenTransfer</associated_to>
+            <associated_to>ConfirmTaskExecution</associated_to>
+            <associated_to>EvaluateProposals</associated_to>
+            <associated_to>ManageAssociationCrowdsales</associated_to>
+            <associated_to>IncludeNewMember</associated_to>
+            <associated_to>RemoveMembership</associated_to>
+        </Committee>        
+        <GovernanceArea gov_area_ID="AssociationManagement" gov_area_description="Association Management" implementation="on-chain"/>
+        <GovernanceArea gov_area_ID="AssociationMembership" gov_area_description="Association Membership" implementation="on-chain"/>
+        
+        <Permission permission_ID="TokenTransfer" allowed_action="Token Transfer" permission_type="strategic"/>
+        <Permission permission_ID="ConfirmTaskExecution" allowed_action="Confirm Task Execution" permission_type="strategic"/>
+        <Permission permission_ID="EvaluateProposals" allowed_action="Evaluate Proposals" permission_type="strategic"/>
+        <Permission permission_ID="OpposeProposal" allowed_action="Oppose Proposal" permission_type="operational"/>
+        <Permission permission_ID="NotifyTaskViolation" allowed_action="Notify Task Violation" permission_type="operational"/>
+        <Permission permission_ID="TaskProposal" allowed_action="Task Proposal" permission_type="operational"/>
+        <Permission permission_ID="ManageAssociationCrowdsales" allowed_action="Manage Association Crowdsales" permission_type="strategic"/>
+        <Permission permission_ID="IncludeNewMember" allowed_action="Include New Member" permission_type="structural"/>
+        <Permission permission_ID="RemoveMembership" allowed_action="Remove Membership" permission_type="structural"/>
+    </DAO>
+    <DAO DAO_ID="CH_Community" DAO_name="Community DAO" mission_statement="Manage the governance of the CommonsHood in the Garden project and its token economy." hierarchical_inheritance="0">
+        <Role id="r_UGC" role_name="Urban Garden Collective" assignment_method="Allowlist" agent_type="autonomous_agent" federation_level="0" aggregation_level="0">
+            <is_controlled_by>C_PolicyCommittee</is_controlled_by>
+            <member_of condition="allowlist">C_PolicyCommittee</member_of>
+            <associated_to>mint-BurnTokenReward</associated_to>
+            <associated_to>TokenEconomy</associated_to>
+            <associated_to>resolveDispute</associated_to>
+        </Role>
+        <Role id="r_ActiveParticipant" role_name="Active Participant" assignment_method="Allowlist" agent_type="human" federation_level="0" aggregation_level="0">
+            <member_of>C_OperationsCommittee</member_of>
+            <member_of condition="Reward Token threshold">C_PolicyCommittee</member_of>
+            <associated_to>acceptTask</associated_to>
+            <associated_to>reportMisbehavior</associated_to>
+            <associated_to>lendTool</associated_to>
+            <associated_to>borrowTool</associated_to>
+            <is_controlled_by>C_OperationsCommittee</is_controlled_by>
+            <aggregates>r_Participant</aggregates>
+
+        </Role>
+        <Role id="r_Participant" role_name="Participant" assignment_method="reward token ownership" agent_type="human" federation_level="0" aggregation_level="1">
+            <member_of>C_OperationsCommittee</member_of>
+            <associated_to>acceptTask</associated_to>
+            <associated_to>reportMisbehavior</associated_to>
+            <associated_to>lendTool</associated_to>
+            <associated_to>borrowTool</associated_to>
+            <is_controlled_by>C_OperationsCommittee</is_controlled_by>
+        </Role>
+        <Role id="r_AssociationRepresentative" role_name="Association Representative" assignment_method="Allowlist" agent_type="autonomous_agent" federation_level="0" aggregation_level="0">
+            <member_of condition="allowlist">C_PolicyCommittee</member_of>
+        </Role>
+        <Committee id="C_PolicyCommittee" committee_name="Policy Committee" n_agent_min="3" federation_level="1">
+            <associated_to>TokenEconomy</associated_to>
+            <associated_to>CommunityMembership</associated_to>
+            <associated_to>CommunityPolicies</associated_to>
+            <associated_to>taskAssignmentPolicyUpgrade</associated_to>
+            <associated_to>sharedSpacesManagementPolicyUpgrade</associated_to>
+            <associated_to>setCrowdsale</associated_to>
+            <associated_to>setInactivityThreshold</associated_to>
+            <associated_to>setTokenExchange</associated_to>
+            <associated_to>setTokenExchange</associated_to>
+            <associated_to>resolveDispute</associated_to>
+        </Committee>
+        <Committee id="C_OperationsCommittee" committee_name="Operations Committee" federation_level="1">
+            <associated_to>GardenManagementOperations</associated_to>
+            <associated_to>CommunityMembership</associated_to>
+            <associated_to>assign-RemoveCommunityMembership</associated_to>
+            <associated_to>distributeRewardTokensinReserve</associated_to>
+            <associated_to>monitorTaskAssignment</associated_to>
+            <associated_to>upgradeToolSharingRules</associated_to>
+        </Committee>
+        <GovernanceArea gov_area_ID="TokenEconomy" gov_area_description="Token Economy" implementation="on-chain"/>
+        <GovernanceArea gov_area_ID="CommunityPolicies" gov_area_description="Community Policies" implementation="on-chain"/>
+        <GovernanceArea gov_area_ID="CommunityMembership" gov_area_description="Community Membership" implementation="on-chain"/>
+        <GovernanceArea gov_area_ID="GardenManagementOperations" gov_area_description="Garden Management Operations" implementation="on-chain"/>
+
+        <Permission permission_ID="mint-BurnTokenReward" allowed_action="Mint-Burn Token Reward" permission_type="structural"/>
+        <Permission permission_ID="resolveDispute" allowed_action="ResolveDispute" permission_type="strategic"/>
+        <Permission permission_ID="setCrowdsale" allowed_action="setCrowdsale" permission_type="strategic"/>
+        <Permission permission_ID="setInactivityThreshold" allowed_action="setInactivityThreshold" permission_type="structural"/>
+        <Permission permission_ID="setTokenExchange" allowed_action="setTokenExchange" permission_type="strategic"/>
+        <Permission permission_ID="upgradeTokenIssuanceandDistributionPolicy" allowed_action="upgradeTokenIssuanceandDistributionPolicy" permission_type="structural"/>
+        <Permission permission_ID="sharedSpacesManagementPolicyUpgrade" allowed_action="sharedSpacesManagementPolicyUpgrade" permission_type="structural"/>
+        <Permission permission_ID="assign-RemoveCommunityMembership" allowed_action="assign-RemoveCommunityMembership" permission_type="structural"/>
+        <Permission permission_ID="distributeRewardTokensinReserve" allowed_action="distributeRewardTokensinReserve" permission_type="strategic"/>
+        <Permission permission_ID="taskAssignmentPolicyUpgrade" allowed_action="taskAssignmentPolicyUpgrade" permission_type="strategic"/>
+        <Permission permission_ID="monitorTaskAssignment" allowed_action="monitorTaskAssignment" permission_type="strategic"/>
+        <Permission permission_ID="upgradeToolSharingRules" allowed_action="upgradeToolSharingRules" permission_type="strategic"/>
+        <Permission permission_ID="acceptTask" allowed_action="acceptTask" permission_type="operational"/>
+        <Permission permission_ID="reportMisbehavior" allowed_action="reportMisbehavior" permission_type="operational"/>
+        <Permission permission_ID="borrowTool" allowed_action="borrowTool" permission_type="operational"/>
+        <Permission permission_ID="lendTool" allowed_action="lendTool" permission_type="operational"/>
+    </DAO>
+</DAOMod_DO_diagram>

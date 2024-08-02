@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<DAOMod_DO_diagram xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="XSD_TDM_Decentralized_Organization.xsd"
+                name="White Rabbit DAO Decentralized Organization Model"
+                uniqueID="WRDAOModel">
+    <DAO DAO_ID="IPDAO" DAO_name="IP Manager DAO" mission_statement="Handle intellectual property claims and conflicts, payments and the distribution of rewards to stakeholders" hierarchical_inheritance="1">
+        <Role id="r_IPRightHolder" role_name="IP Right Holder" assignment_method="IP Registration" agent_type="human" federation_level="0" aggregation_level="1">
+            <member_of>C_crm</member_of>
+            <associated_to>VoteIPOwnershipshare</associated_to>
+            <associated_to>ClaimIPRights </associated_to>
+            <associated_to>proposeIPRightAllocationPolicy</associated_to>
+
+        </Role>
+        <Role id="r_DAOShareHolder" role_name="DAO Share Holder" assignment_method="GT Purchase" agent_type="human" federation_level="0" aggregation_level="0">
+            <member_of>C_dm</member_of>
+            <associated_to>VoteProfitSharingPolicy</associated_to>
+            <associated_to>ProposeProfitSharingPolicy </associated_to>
+        </Role>
+
+        <Role id="r_Distributor" role_name="Distributor"  agent_type="human" federation_level="0" aggregation_level="0">
+            <aggregates>r_IPRightHolder</aggregates>
+        </Role>
+        <Role id="r_FilmProducer" role_name="Film Producer"  agent_type="human" federation_level="0" aggregation_level="0">
+            <aggregates>r_IPRightHolder</aggregates>
+        </Role>
+        <Role id="r_ContentCreator" role_name="Content Creator"  agent_type="human" federation_level="0" aggregation_level="0">
+            <aggregates>r_IPRightHolder</aggregates>
+        </Role>
+        <Role id="r_SalesAgent" role_name="Sales Agent"  agent_type="human" federation_level="0" aggregation_level="0">
+            <aggregates>r_IPRightHolder</aggregates>
+        </Role>
+
+        <Committee id="C_crm" committee_name="IP Conflict Resolution Manager"  appointment_method="IP ownership" federation_level="1">
+            <associated_to>SendVotingRequest</associated_to>
+            <associated_to>setIPRights</associated_to>
+            <associated_to>upgradeIPRight</associated_to>        
+        </Committee>
+        <Committee id="C_dm" committee_name="DAO Manager"  appointment_method="GT ownership" federation_level="1">
+            <associated_to>SendVotingRequest</associated_to>
+            <associated_to>SetIPRegistrationFee</associated_to>
+            <associated_to>setprofitSharingPolicy</associated_to>
+        </Committee>
+        <GovernanceArea gov_area_ID="RewardDistribution" gov_area_description="Reward Distribution" implementation="hybrid"/>
+        <GovernanceArea gov_area_ID="IPOwnership" gov_area_description="IP Ownership" implementation="hybrid"/>
+        <Permission permission_ID="upgradeIPRight" allowed_action="upgradeIPRight" permission_type="strategic"/>
+        <Permission permission_ID="proposeIPRightAllocationPolicy" allowed_action="proposeIPRightAllocationPolicy" permission_type="strategic"/>
+        <Permission permission_ID="SendVotingRequest" allowed_action="SendVotingRequest" permission_type="operational"/>
+        <Permission permission_ID="ClaimIPRights" allowed_action="Claim IP Rights" permission_type="structural"/>
+        <Permission permission_ID="VoteIPOwnershipshare" allowed_action="Vote IP ownership share" permission_type="operational"/>
+        <Permission permission_ID="setprofitSharingPolicy" allowed_action="set profit Sharing Policy" permission_type="strategic"/>
+        <Permission permission_ID="ProposeProfitSharingPolicy" allowed_action="Propose Profit Sharing Policy" permission_type="strategic"/>
+        <Permission permission_ID="VoteProfitSharingPolicy" allowed_action="Vote Profit Sharing Policy" permission_type="strategic"/>
+        <Permission permission_ID="SetIPRegistrationFee" allowed_action="Set IP Registration Fee" permission_type="structural"/>
+        <Permission permission_ID="setIPRights" allowed_action="set IP Rights" permission_type="structural"/>
+        </DAO>
+</DAOMod_DO_diagram>

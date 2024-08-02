@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Liquid Studio (https://www.liquid-technologies.com) -->
+<diagram id="CirlcesDAOdiagram" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema_DAOMod_ERD_journal_submission.xsd">
+    <diagram_name>Circles DAO Diagram</diagram_name>
+    <organizationGoal id="og1">
+        <refinement_level>0</refinement_level>
+        <DAO_name>Circles DAO</DAO_name>
+        <mission_statement>manage the governance of a Circles Group and its token economy</mission_statement>
+    </organizationGoal>
+    <treasury id="t1" decomposed_from="og1">
+        <refinement_level>1</refinement_level>
+        <treasury_name>Group Treasury</treasury_name>
+        <DAO_fiscal_policy_goal>fund local community projects and reward service provisioning</DAO_fiscal_policy_goal>
+    </treasury>
+    <decisionMakingMethod id="dmm1" decomposed_from="og1" execution="onchain">
+        <refinement_level>1</refinement_level>
+        <DM_goal>Enable Technical, Economic and Community councils voting</DM_goal>
+        <DM_scope>attestations; group membership, treasury management;</DM_scope>
+        <DM_method>Relative Majority Voting</DM_method>
+        <voting_requirement>PS ownership; PS threshold</voting_requirement>
+        <proposal_requirement>PS ownership; PS threshold</proposal_requirement>
+    </decisionMakingMethod>
+    <decisionMakingMethod id="dmm2" decomposed_from="og1" execution="snapshot">
+        <refinement_level>1</refinement_level>
+        <DM_goal>Enable General Assembly deliberation</DM_goal>
+        <DM_scope>service provision</DM_scope>
+        <DM_method>Optimistic Governance</DM_method>
+        <voting_requirement>GC ownership</voting_requirement>
+        <proposal_requirement>GC ownership</proposal_requirement>
+    </decisionMakingMethod>
+    <tokenManager id="tm1" decomposed_from="og1">
+        <refinement_level>1</refinement_level>
+        <token_manager_name>Circles DAO token manager</token_manager_name>
+        <tokenomic_policy_goal>ensure active participation and commitment to the system</tokenomic_policy_goal>
+    </tokenManager>
+    <token id="PS" decomposed_from="tm1">
+        <refinement_level>2</refinement_level>
+        <value>Perishable Share</value>
+        <token_utility>reputation;governance;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>SFT</fungibility>
+    </token>
+    <token id="GC" decomposed_from="tm1">
+        <refinement_level>2</refinement_level>
+        <value>Group Currency</value>
+        <token_utility>financial;access;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <token id="CT" decomposed_from="t1">
+        <refinement_level>2</refinement_level>
+        <value>Circles Tokens</value>
+        <token_utility>governance;financial</token_utility>
+        <transferable>true</transferable>
+        <fungibility>SFT</fungibility>
+    </token>
+    <token id="EUROE" decomposed_from="t1">
+        <refinement_level>2</refinement_level>
+        <value>Euro stablecoin</value>
+        <token_utility>financial;</token_utility>
+        <transferable>true</transferable>
+        <fungibility>FT</fungibility>
+    </token>
+    <resource id="r1" associated_to="PS" material="false">
+        <resource_name>governance right</resource_name>
+    </resource>
+    <resource id="r2" associated_to="GC" material="false">
+        <resource_name>services provided by the DAO</resource_name>
+    </resource>
+    <resource id="r3" associated_to="CT" material="false">
+        <resource_name>group membership</resource_name>
+    </resource>
+    <resource id="r4" associated_to="CT" material="true">
+        <resource_name>UBI</resource_name>
+    </resource>
+    <resource id="r5" associated_to="EUROE" material="true">
+        <resource_name>national currency funds</resource_name>
+    </resource>
+    <mechanism id="m1" decomposed_from="PS" execution="onchain" mechanism_type="Token Issuance">
+        <refinement_level>3</refinement_level>
+        <value>burn PS</value>
+        <trigger>periodic</trigger>
+    </mechanism>
+    <mechanism id="m2" decomposed_from="PS" execution="onchain" mechanism_type="Incentive">
+        <refinement_level>3</refinement_level>
+        <value>issue and distribute PS to contributors</value>
+        <trigger>attested contribution received</trigger>
+    </mechanism>
+    <mechanism id="m3" decomposed_from="GC" execution="onchain" mechanism_type="Token Issuance">
+        <refinement_level>3</refinement_level>
+        <value>mint and distribute GC to users depositing Circles tokens</value>
+        <trigger>CT staking</trigger>
+    </mechanism>
+    <mechanism id="m4" decomposed_from="CT" execution="onchain" mechanism_type="Revenue Management">
+        <refinement_level>3</refinement_level>
+        <value>lend Circles tokens to fund community projects</value>
+        <trigger>funding request approval by DAO</trigger>
+    </mechanism>
+    <mechanism id="m5" decomposed_from="EUROE" execution="onchain" mechanism_type="Revenue Management">
+        <refinement_level>3</refinement_level>
+        <value>pay for expenses in EUROE</value>
+        <trigger>expense approval</trigger>
+    </mechanism>
+    <mechanism id="m6" decomposed_from="t1" execution="onchain" mechanism_type="Revenue Management">
+        <refinement_level>2</refinement_level>
+        <value>distribute GC to service provider</value>
+        <trigger>service purchased</trigger>
+    </mechanism>
+    <mechanism id="m7" decomposed_from="t1" execution="onchain" mechanism_type="Exchange">
+        <refinement_level>2</refinement_level>
+        <value>swap GC for EUROE</value>
+        <trigger>GC or EUROE trnasfer</trigger>
+    </mechanism>
+    <asset id="a1" decomposed_from="g1">
+        <refinement_level>2</refinement_level>
+        <value>contributions</value>
+        <parameter>token_type</parameter>
+        <parameter>token_amount</parameter>
+        <parameter>contributor</parameter>
+        <parameter>valid</parameter>
+    </asset>
+    <asset id="a2" decomposed_from="g1">
+        <refinement_level>2</refinement_level>
+        <value>attestation requirements</value>
+        <parameter>required_proof</parameter>
+        <parameter>token_type</parameter>
+    </asset>
+    <transaction id="tx1" decomposed_from="a1">
+        <refinement_level>3</refinement_level>
+        <function_name>submit contribution</function_name>
+        <operation/>
+    </transaction>
+    <transaction id="tx2" decomposed_from="a1 a2">
+        <refinement_level>3</refinement_level>
+        <function_name>validate contribution</function_name>
+        <operation/>
+    </transaction>
+    <transaction id="tx3" decomposed_from="a2">
+        <refinement_level>3</refinement_level>
+        <function_name>set attestation requirements</function_name>
+        <operation/>
+    </transaction>
+    <goal id="g1" decomposed_from="og1" execution="onchain">
+        <refinement_level>1</refinement_level>
+        <value>Manage Attestations</value>
+    </goal>
+    <qualitygoal id="qg1" associated_to="dmm2">
+        <value>Simple</value>
+    </qualitygoal>
+    <qualitygoal id="qg2" associated_to="dmm2">
+        <value>Performant</value>
+    </qualitygoal>
+    <qualitygoal id="qg3" associated_to="dmm2">
+        <value>Inclusive</value>
+    </qualitygoal>
+    <qualitygoal id="qg4" associated_to="og1">
+        <value>Upgradable</value>
+    </qualitygoal>
+    <qualitygoal id="qg5" associated_to="og1">
+        <value>Secure</value>
+    </qualitygoal>
+    <qualitygoal id="qg6" associated_to="og1">
+        <value>Scalable</value>
+    </qualitygoal>
+    <qualitygoal id="qg7" associated_to="dmm1">
+        <value>Accountable</value>
+    </qualitygoal>
+    <qualitygoal id="qg8" associated_to="t1">
+        <value>Profitable</value>
+    </qualitygoal>
+    <qualitygoal id="qg9" associated_to="t1">
+        <value>Dependable</value>
+    </qualitygoal>
+    <qualitygoal id="qg10" associated_to="t1">
+        <value>Diversified</value>
+    </qualitygoal>
+    <qualitygoal id="qg11" associated_to="tm1">
+        <value>Incentive-aligning</value>
+    </qualitygoal>
+    <agent id="ag1" associated_to="dmm2 tx1" agent_name="Group Member" autonomous="false"/>
+    <agent id="ag2" associated_to="m1" agent_name="Technical Council" autonomous="true"/>
+    <agent id="ag3" associated_to="tm1" agent_name="Economic Council" autonomous="true"/>
+    <agent id="ag4" associated_to="m3" agent_name="Circles User" autonomous="false"/>
+    <agent id="ag5" associated_to="dmm1" agent_name="Active Member" autonomous="false"/>
+    <agent id="ag6" associated_to="t1" agent_name="Treasury Manager" autonomous="false"/>
+    <agent id="ag7" associated_to="tx2 tx3" agent_name="Community Council" autonomous="true"/>
+</diagram>

@@ -1,0 +1,519 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22/"
+     xml:base="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#affected_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#affected_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#affects"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#implemented_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#implemented_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#implements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#is_contributed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#is_contributed_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#contributes_to"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#consists_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#played_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#played_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#plays"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#realized_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#realized_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/CSE_Ontology#realizes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#stimulated_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#stimulated_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#stimulates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#used_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#used_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#uses"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#affects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#consists_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#consists_of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#contributes_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#contributes_to">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#implements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Policy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Rule"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#is_measured_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#is_measured_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#measures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#leads_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#leads_to">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#result_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Legislation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Regulation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#measures -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#measures">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#plays -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#plays">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#result_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#result_of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#stimulates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#stimulates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Incentive"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#uses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#uses">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#DecisionMaking"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2024/CSE_Ontology#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/CSE_Ontology#realizes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#expression -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#expression">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Policy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#measurement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#measurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#position -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#position">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>define</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>execute</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>monitor</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#representation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#representation">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#DecisionMaking"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Rule"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#DecisionMaking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#DecisionMaking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#used_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Group -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Group">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Incentive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Incentive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#stimulates"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Legislation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Legislation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Objective">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/CSE_Ontology#realizes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Party">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#consists_of"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Actor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#plays"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Penalty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Penalty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Incentive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Policy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Policy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Regulation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Regulation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#result_of"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Legislation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Reward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Reward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Incentive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Role">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#affects"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Rule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Rule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#implemented_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Mechanism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#RuleSet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#GovernanceConstruct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/DECENT_OWL#implemented_by"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sowel/ontologies/2023/10/untitled-ontology-22#Policy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
