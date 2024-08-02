@@ -3817,7 +3817,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_ID -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_ID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -3827,7 +3826,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_name -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -3837,7 +3835,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_ref_ID -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_ref_ID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -3971,16 +3968,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
-    
-
-
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#access_control_policy_description -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#access_control_policy_description">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Permission_Manager"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -4067,7 +4057,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#assignment_method -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#assignment_method">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Role_Assignment"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -4220,7 +4209,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#enabled_action -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#enabled_action">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Permission"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -4364,7 +4352,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#hierarchical_inheritance -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#hierarchical_inheritance">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Permission_Manager"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
@@ -4374,7 +4361,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#implementation -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#implementation">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Governance_Area"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -4501,7 +4487,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#mission_statement -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#mission_statement">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -4511,7 +4496,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#n_agents -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#n_agents">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -4604,7 +4588,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#permission_type -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#permission_type">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Permission"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -4880,7 +4863,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#role_ID -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#role_ID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Role"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -4890,7 +4872,6 @@
     <!-- http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#role_description -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#role_description">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Org_DP"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Role"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
