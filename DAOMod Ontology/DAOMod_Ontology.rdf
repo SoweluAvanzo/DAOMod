@@ -4037,11 +4037,11 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>conditional</rdf:first>
+                        <rdf:first>binary</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>continuous</rdf:first>
+                                <rdf:first>multiple</rdf:first>
                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                             </rdf:Description>
                         </rdf:rest>
@@ -4066,7 +4066,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#autonomous_execution">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#proposal_execution"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 

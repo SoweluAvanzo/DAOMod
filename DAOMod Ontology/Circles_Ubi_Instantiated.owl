@@ -2557,10 +2557,10 @@
     <rdfs:Datatype>
       <owl:oneOf>
         <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">conditional</rdf:first>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binary</rdf:first>
         <rdf:rest>
         <rdf:Description>
-      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous</rdf:first>
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multiple</rdf:first>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         </rdf:Description>
         </rdf:rest>
@@ -2577,7 +2577,7 @@
 
 <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#autonomous_execution">
   <rdfs:domain rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#proposal_execution"/>
-  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
 </owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ballot_type">
@@ -4681,12 +4681,12 @@
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CirclesDAO">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO"/>
   <DAOM:DAO_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Circles DAO</DAOM:DAO_name>
-  <DAOM:mission_statement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manage governance of Circles group, token economy, and attest user contributions.</DAOM:mission_statement>
+  <DAOM:mission_statement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manage  the governance of a group in the Circles UBI system, its token economy and attest user contributions.</DAOM:mission_statement>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#GroupMember">
   <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Role"/>
-  <DAOM:role_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Users depositing Circles tokens to join.</DAOM:role_description>
+  <DAOM:role_description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Users depositing Circles tokens to join the group.</DAOM:role_description>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ActiveMember">
@@ -4701,7 +4701,6 @@
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GeneralAssembly">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Committee"/>
-  <DAOM:n_agents rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</DAOM:n_agents>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CommunityCouncil">
@@ -4737,8 +4736,21 @@
   <DAOM:implementation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onchain</DAOM:implementation>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Attestations">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Governance_Area"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attests user contributions.</eSou:description>
+  <DAOM:implementation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onchain</DAOM:implementation>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#EmergencyResponse">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Governance_Area"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manages emergency situations.</eSou:description>
+  <DAOM:implementation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hybrid</DAOM:implementation>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CirclesToken">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_type"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CirclesRevenueManagement"/>
   <DAOM:token_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Circles Token</DAOM:token_name>
   <DAOM:fungibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SFT</DAOM:fungibility>
   <DAOM:transferable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DAOM:transferable>
@@ -4748,15 +4760,18 @@
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GroupCurrency">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_type"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GroupCurrencyIssuance"/>
   <DAOM:token_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group Currency</DAOM:token_name>
   <DAOM:fungibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FT</DAOM:fungibility>
   <DAOM:transferable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DAOM:transferable>
-  <DAOM:token_utility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">financial</DAOM:token_utility>
   <DAOM:token_utility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">access</DAOM:token_utility>
+  <DAOM:token_utility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">financial</DAOM:token_utility>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShare">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_type"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShareIssuance"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShareIncentive"/>
   <DAOM:token_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perishable Share</DAOM:token_name>
   <DAOM:fungibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SFT</DAOM:fungibility>
   <DAOM:transferable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DAOM:transferable>
@@ -4764,29 +4779,329 @@
   <DAOM:token_utility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reputation</DAOM:token_utility>
 </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#stablecoin">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_type"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#EUROERevenueManagement"/>
+  <DAOM:token_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EUROE</DAOM:token_name>
+  <DAOM:fungibility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FT</DAOM:fungibility>
+  <DAOM:transferable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DAOM:transferable>
+  <DAOM:token_utility rdf:datatype="http://www.w3.org/2001/XMLSchema#string">financial</DAOM:token_utility>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAOTokenManager">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_manager"/>
+  <DAOM:manages rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CirclesToken"/>
+  <DAOM:manages rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GroupCurrency"/>
+  <DAOM:manages rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShare"/>
+  <DAOM:token_economy_goal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manage and issue DAO tokens for governance and incentives</DAOM:token_economy_goal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAOTreasury">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#DAO_treasury"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ExchangeMechanism"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ServiceIncentiveMechanism"/>
+  <DAOM:fiscal_policy_goal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Store and manage EUROE tokens for DAO operations</DAOM:fiscal_policy_goal>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceConditionPerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expiry date elapsed</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceRulePerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceConditionPerishableShare"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceActionPerishableShare"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">periodically burn Perishable Shares</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceActionPerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Burn Perishable Shares</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShareIssuance">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_issuance"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceRulePerishableShare"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveConditionPerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User contribution verified</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveRulePerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveConditionPerishableShare"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveActionPerishableShare"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reward with Perishable Shares active users when contribution is verified</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveActionPerishableShare">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">issue and distribute Perishable Shares to active user</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#PerishableShareIncentive">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Incentive"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveRulePerishableShare"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceConditionGroupCurrency">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Circles token staking verified</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceRuleGroupCurrency">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceConditionGroupCurrency"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceActionGroupCurrency"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mint new Group Currency tokens when Circles tokens are staked</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceActionGroupCurrency">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mint and distribute Group Currency tokens to staker</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GroupCurrencyIssuance">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#token_issuance"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IssuanceRuleGroupCurrency"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueConditionCirclesToken">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Funding request for community projects approval</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueRuleCirclesToken">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueConditionCirclesToken"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueActionCirclesToken"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lend Circles Tokens to fund community projects</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueActionCirclesToken">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transfer Circles Tokens to fund community projects</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CirclesRevenueManagement">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#revenue_management"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueRuleCirclesToken"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueConditionEUROE">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Revenue allocation triggered</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueRuleEUROE">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueConditionEUROE"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueActionEUROE"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allocate revenue from EUROE token holdings</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueActionEUROE">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allocate EUROE revenue to DAO initiatives</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#EUROERevenueManagement">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#revenue_management"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#RevenueRuleEUROE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeCondition">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Token transfer detected (EUROE or GroupCurrency)</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeRule">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeCondition"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeAction"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Swap EUROE for GroupCurrency or vice versa based on exchange rate</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeAction">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execute token swap based on defined exchange rate</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ExchangeMechanism">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#revenue_management"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExchangeRule"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveConditionService">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proof of service completion submitted</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveRuleService">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveConditionService"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveActionService"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Distribute GroupCurrency to service providers upon proof of service completion</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveActionService">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transfer GroupCurrency to the service provider’s account</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ServiceIncentiveMechanism">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Incentive"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#IncentiveRuleService"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#VotePollingMechanism">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#vote_polling"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingReactionRule"/>
+  <DAOM:ballot_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single</DAOM:ballot_type>
+  <DAOM:proposal_submission rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous</DAOM:proposal_submission>
+  <DAOM:alternative_selection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binary</DAOM:alternative_selection>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingCondition">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proposal must be submitted</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingReactionRule">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingCondition"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingAction"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigger rule when proposal is cast by participants</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#PollingAction">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record the votes cast during polling</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#SimpleMajorityTallyingMechanism">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#vote_tallying"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingReactionRuleSM"/>
+  <DAOM:vote_weight rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uniform</DAOM:vote_weight>
+  <DAOM:token_ref_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GroupCurrency</DAOM:token_ref_ID>
+  <DAOM:participant_quorum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</DAOM:participant_quorum>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingConditionSM">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polling must be complete for Simple Majority</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingReactionRuleSM">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingConditionSM"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingActionSM"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigger when proposal participation quorum is met (Simple Majority)</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingActionSM">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculate votes using simple majority method</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#OptimisticGovernanceTallyingMechanism">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#vote_tallying"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingReactionRuleOG"/>
+  <DAOM:vote_weight rdf:datatype="http://www.w3.org/2001/XMLSchema#string">token_balance</DAOM:vote_weight>
+  <DAOM:token_ref_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PerishableShare</DAOM:token_ref_ID>
+  <DAOM:participant_quorum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</DAOM:participant_quorum>
+  <DAOM:majority_quorum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</DAOM:majority_quorum>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingConditionOG">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polling must be complete for Optimistic Governance</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingReactionRuleOG">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingConditionOG"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingActionOG"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigger when challenge period elapsed (Optimistic Governance)</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#TallyingActionOG">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculate challenges for optimistic governance protocol</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ProposalExecutionGeneral">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#proposal_execution"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionRuleGeneral"/>
+  <DAOM:autonomous_execution rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</DAOM:autonomous_execution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionConditionGeneral">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proposal must not be challenged by General Assembly Voting</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionRuleGeneral">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionConditionGeneral"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionActionGeneral"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigger rule for time elapsed</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionActionGeneral">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execute the proposal not opposed by General Assembly</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ProposalExecutionCouncil">
+  <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#proposal_execution"/>
+  <DAOM:implements rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionRuleCouncil"/>
+  <DAOM:autonomous_execution rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DAOM:autonomous_execution>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionConditionCouncil">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Condition"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proposal must be approved by Council Voting</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionRuleCouncil">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Reaction_Rule"/>
+  <eSou:has_rule_condition rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionConditionCouncil"/>
+  <DAOM:triggers rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionActionCouncil"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trigger rule for proposal approval by council</eSou:description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#ExecutionActionCouncil">
+  <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Executive_Action"/>
+  <eSou:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Execute the proposal approved by Council Voting</eSou:description>
+</owl:NamedIndividual>
+
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#GeneralAssemblyVoting">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#decision_making_policy"/>
-  <DAOM:DM_method rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optimistic Governance</DAOM:DM_method>
-  <DAOM:voting_requirement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group Currency ownership</DAOM:voting_requirement>
-  <DAOM:proposal_requirement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group Currency ownership</DAOM:proposal_requirement>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#VotePollingMechanism"/>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ProposalExecutionGeneral"/>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#OptimisticGovernanceTallyingMechanism"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CouncilVoting">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#decision_making_policy"/>
-  <DAOM:DM_method rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relative Majority Voting</DAOM:DM_method>
-  <DAOM:voting_requirement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perishable Share ownership</DAOM:voting_requirement>
-  <DAOM:proposal_requirement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perishable Share ownership</DAOM:proposal_requirement>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#VotePollingMechanism"/>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#SimpleMajorityTallyingMechanism"/>
+  <DAOM:consists_of rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ProposalExecutionCouncil"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#ServiceProvisionRole">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Role_Assignment"/>
-  <DAOM:role_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeneralAssemblyRole</DAOM:role_ID>
+  <DAOM:role_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeneralAssemblyMembership</DAOM:role_ID>
   <DAOM:assignment_method rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group Currency ownership</DAOM:assignment_method>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#MembershipManagement">
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#CouncilMembershipManagement">
   <rdf:type rdf:resource="http://www.semanticweb.org/sowel/ontologies/2024/4/DAOMod_Ontology#Role_Assignment"/>
-  <DAOM:role_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CommunityCouncilRole</DAOM:role_ID>
+  <DAOM:role_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CouncilMembershipManagement</DAOM:role_ID>
   <DAOM:assignment_method rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perishable Share ownership</DAOM:assignment_method>
 </owl:NamedIndividual>
 
