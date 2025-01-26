@@ -2979,23 +2979,6 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#description">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Appointment"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Capability"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Connection_Relationship"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Consideration"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Containment_Type"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Correlation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Hierarchy_Relationship"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Non_Actor"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Organizational_Unit"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Power"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Power_Delegation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Privilege"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Resource_Type"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Role"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Role_Delegation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Sourcing_Sphere"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2015/0/eSourcing_Ontology#Space"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
